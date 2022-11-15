@@ -1,0 +1,30 @@
+
+.dash{
+  margin: 2rem;
+  gap: 2rem ;
+}
+#dash-cards{
+  width: 100%;
+  color: red !important;
+  margin-top: 2px;
+  flex-shrink: 1;
+}.sub-cards{
+  width: 10%;
+}
+#amount{
+  color: red;
+  margin-top: 3px;
+}
+._divider{
+  margin-top: 3px;
+
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

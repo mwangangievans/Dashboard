@@ -1,0 +1,70 @@
+<mat-card>
+  <mat-card-content> <b>Rush Gold</b> </mat-card-content>
+</mat-card>
+
+<div fxLayout="column" class="dash">
+
+  <div fxLayout="row wrap" fxLayoutGap="20px" fxFlexAlign="space-between center">
+      <mat-card fxFlex.gt-md="22" fxFlex.lt-lg="45" class="bg-primary  text-white">
+          <mat-card-title> <mat-icon>account_balance_wallet</mat-icon>  &nbsp; TRANSACTIONS</mat-card-title>
+          <mat-divider></mat-divider>
+          <div  class="mt-5">
+              <mat-card-content> <p>180,000</p> </mat-card-content>
+          </div>
+      </mat-card>
+
+      <mat-card fxFlex.gt-md="22" fxFlex.lt-lg="45" class="bg-accent text-white" >
+          <mat-card-title> <mat-icon>account_balance_wallet</mat-icon>  &nbsp; EARNINGS</mat-card-title>
+          <mat-divider></mat-divider>
+          <div  class="mt-5">
+              <mat-card-content> <p>Kes.295,600</p> </mat-card-content>
+          </div>
+      </mat-card>
+
+      <mat-card fxFlex.gt-md="22" fxFlex.lt-lg="45" class="bg-primary text-white">
+          <mat-card-title> <mat-icon>account_circle</mat-icon>  &nbsp; MERCHANTS</mat-card-title>
+          <mat-divider></mat-divider>
+          <div  class="mt-5">
+              <mat-card-content> <p>180,000</p> </mat-card-content>
+          </div>
+      </mat-card>
+  </div>
+
+
+  <!--  -->
+  <div fxLayout="row" fxLayoutGap="20px" fxFlexAlign="space-between center">
+    <mat-form-field class="example-form-field" appearance="outline" class="my-4 font-medium">
+      <!-- <mat-label>First campaign</mat-label> -->
+      <mat-date-range-input class="text-sm" [formGroup]="campaignOne" [rangePicker]="campaignOnePicker"
+        [comparisonStart]="campaignTwo.value.start" [comparisonEnd]="campaignTwo.value.end">
+        <input matStartDate placeholder="Start date" formControlName="start" />
+        <input matEndDate placeholder="End date" formControlName="end" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="my-4">
+      <button mat-icon-button matSuffix [attr.aria-label]="'Search'" (click)="('')">
+        <mat-icon>search</mat-icon>
+      </button>
+      <input matInput [formControl]="searchControl" />
+      <button mat-icon-button matSuffix [attr.aria-label]="'Clear'" *ngIf="searchControl.value"
+        (click)="searchControl.setValue('')">
+        <mat-icon color="warn">close</mat-icon>
+      </button>
+      <mat-label>Search </mat-label>
+    </mat-form-field>
+
+    <span class="example-spacer"></span>
+
+    <div class="flex my-4 cursor-pointer">
+      <mat-icon class="ml-5">download</mat-icon>
+      <u>
+        <mat-label>Download</mat-label>
+      </u>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,69 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+        <mat-nav-list routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+            <mat-list-item class="p-5 mt-3" routerLinkActive="active">
+                <mat-icon>toc</mat-icon><a routerLink="dashboard" >Dashboard</a>
+            </mat-list-item>
+            <mat-list-item class="p-5  mt-3" routerLinkActive="active">
+                <mat-icon>import_export</mat-icon><a routerLink="transactions">Transactions</a>
+            </mat-list-item>
+            <mat-list-item class="p-5  mt-3" routerLinkActive="active">
+              <mat-icon>redo</mat-icon><a routerLink="reversals">Resersal</a>
+          </mat-list-item>
+          <mat-list-item class="p-5  mt-3" routerLinkActive="active">
+            <mat-icon>portrait</mat-icon><a routerLink="merchants">Merchants</a>
+        </mat-list-item>
+        <mat-list-item class="p-5  mt-3" routerLinkActive="active">
+          <mat-icon>local_atm</mat-icon><a routerLink="settlement">Settlement</a>
+      </mat-list-item>
+    <mat-list-item class="p-5  mt-3" routerLinkActive="active">
+      <mat-icon>supervisor_account</mat-icon><a routerLink="system-users">System Users</a>
+  </mat-list-item>
+  <mat-list-item class="p-5  mt-3" routerLinkActive="active">
+    <mat-icon>mobile_screen_share</mat-icon><a routerLink="mobile-transactions">Mobile transactions</a>
+</mat-list-item>
+<mat-list-item class="p-5  mt-3" routerLinkActive="active">
+  <mat-icon>local_atm</mat-icon><a routerLink="RushGold">RushGold</a>
+</mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="w-full">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+
+            <button type="button" mat-button (click)="drawer.toggle()">
+                <mat-icon color="primary">subject</mat-icon>
+            </button>
+
+            <mat-form-field appearance="outline" class="my-4">
+                <mat-label>Search </mat-label>
+                <input matInput [formControl]="searchControl">
+                <button mat-icon-button matSuffix [attr.aria-label]="'Clear'" *ngIf="searchControl.value"
+                    (click)="searchControl.setValue('');">
+                    <mat-icon color="warn">close</mat-icon>
+                </button>
+                <button mat-icon-button matSuffix [attr.aria-label]="'Search'" (click)="''">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+
+            <mat-icon matBadge="3" matBadgeColor="warn">notifications</mat-icon>
+            <img style="width: 3rem;" src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"
+                alt="">
+            <div>
+                <h2 class="text-text-dark">System User</h2>
+                <small class="text-text-light">merchand 1</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+
+
+
+</mat-drawer-container>
