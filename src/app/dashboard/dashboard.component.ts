@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { environment } from 'src/environments/environment';
 import { ApiServiceService } from '../services/api-service.service';
 
 
@@ -60,7 +59,7 @@ export class DashboardComponent implements OnInit {
 
   dateControl = new FormControl('');
 
-  displayedColumns: string[] = 
+  displayedColumns: string[] =
   ['symbol', 'priceChange', 'priceChangePercent', 'weightedAvgPrice','prevClosePrice',
    'lastPrice', 'lastQty','bidPrice'];
 
@@ -69,7 +68,9 @@ export class DashboardComponent implements OnInit {
 
   // MatPaginator Inputs
   length! : number;
-  pageSize = environment.page_size;
+
+
+  pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
   // MatPaginator Output
